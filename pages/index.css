@@ -1,0 +1,277 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e5ddd5;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.chat-container {
+  display: flex;
+  height: 100vh; /* Use full viewport height */
+  width: 100vw; /* Use full viewport width */
+  margin: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 30%; /* Keep sidebar width */
+  height: 100%; /* Ensure sidebar takes full height */
+  background-color: #2a2f32;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar {
+  padding: 10px;
+  border-bottom: 1px solid #3b3f42;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #3b3f42;
+  color: #fff;
+}
+
+.chat-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #3b3f42;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-item:hover {
+  background-color: #3b3f42;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #7f8c8d;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-info {
+  flex: 1;
+}
+
+.chat-name {
+  font-weight: bold;
+}
+
+.chat-status {
+  color: #25d366;
+  font-size: 0.9em;
+}
+
+.chat-last-seen {
+  color: #bdc3c7;
+  font-size: 0.9em;
+}
+
+.chat-message {
+  color: #bdc3c7;
+}
+
+.chat-time {
+  color: #bdc3c7;
+}
+
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #e5ddd5;
+  height: 100%; /* Use full height of the chat container */
+}
+
+.chat-header {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #075e54;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-title {
+  font-weight: bold;
+}
+
+.chat-participants {
+  color: #fff;
+}
+
+.chat-status {
+  color: #25d366;
+  font-weight: bold;
+}
+
+.chat-last-seen {
+  color: #fff;
+  font-size: 0.9em;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #efeae2;
+  background-image: url('/wallpaper3.jpg'); /* Add your wallpaper image path here */
+  background-size: cover;
+  background-position: center;
+}
+
+.message {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message.received {
+  align-items: flex-start;
+}
+
+.message.sent {
+  align-items: flex-end;
+}
+
+.message-content {
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 60%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.message.received .message-content {
+  background-color: #fff;
+}
+
+.message.sent .message-content {
+  background-color: #dcf8c6;
+}
+
+.message-time {
+  font-size: 0.8em;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-right: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #075e54;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+  background-color: #128c7e;
+}
+
+/* Settings Button Styles */
+.settings-container {
+  position: absolute; /* Change to absolute positioning */
+  top: 10px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the right position as needed */
+  z-index: 1001; /* Ensure it is above other elements */
+}
+
+.settings-button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #075e54;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.settings-button:hover {
+  background-color: #128c7e;
+}
+
+.settings-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: block; /* Ensure the dropdown is visible */
+}
+
+.settings-dropdown button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.settings-dropdown button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Double Tick Styles */
+.double-tick {
+  width: 16px; /* Adjust size as needed */
+  height: 16px; /* Adjust size as needed */
+  background-image: url('/path/to/double-tick-icon.png'); /* Add your double tick icon path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 5px; /* Space between message and tick */
+  display: none; /* Initially hidden */
+}
